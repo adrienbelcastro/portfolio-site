@@ -7,13 +7,13 @@ const Header = () => {
     <>
       <div className="header">
         <ul className="header__desktop-navbar">
-          <a href="/" className="header__desktop-ingredients">
+          <a href="/" className="header__desktop-about-me">
             About Me
           </a>
-          <a href="/" className="header__desktop-countries">
+          <a href="/" className="header__desktop-projects">
             Projects
           </a>
-          <a href="/" className="header__desktop-random-recipe">
+          <a href="/" className="header__desktop-contact">
             Contact
           </a>
         </ul>
