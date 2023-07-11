@@ -20,12 +20,12 @@
     background: $black;
   }
   &__menu {
-    background: $wheat;
+    background: $off-white;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
   }
   &__morph-shape {
-    fill: $wheat;
+    fill: $off-white;
   }
   &__item-list {
     color: #b8b7ad;
@@ -42,13 +42,6 @@
 
   &__overlay {
     background: rgba(0, 0, 0, 0.3);
-  }
-
-  &__logo {
-    width: 200px;
-    position: absolute;
-    bottom: 5rem;
-    right: -1rem;
   }
 }
 

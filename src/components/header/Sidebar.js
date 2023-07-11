@@ -1,5 +1,5 @@
 import React from "react";
-import { elastic as Menu } from "react-burger-menu";
+import { stack as Menu } from "react-burger-menu";
 import "./Sidebar.scss";
 
 function Sidebar() {
@@ -19,11 +19,11 @@ function Sidebar() {
         About Me
       </a>
 
-      <a href="/planner" className="sidebar__links">
+      <a href="/" className="sidebar__links">
         Projects
       </a>
 
-      <a href="/country" className="sidebar__links">
+      <a href="/" className="sidebar__links">
         Contact
       </a>
     </Menu>
