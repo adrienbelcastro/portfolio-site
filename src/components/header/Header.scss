@@ -15,37 +15,12 @@
     padding-right: 1.2rem;
   }
 
-  &__desktop-logo,
-  &__desktop-navbar,
-  &__desktop-search,
-  &__desktop-signup {
+  &__desktop-navbar {
     display: none;
   }
 
-  &__logo {
-    width: 4rem;
-    margin-top: 0.8rem;
-
-    @include desktop {
-      display: none;
-    }
-  }
-
-  &__desktop-logo {
-    @include desktop {
-      display: block;
-    }
-  }
-
-  &__profile {
-    width: 36px;
-    margin-top: 1.25rem;
-    margin-right: 1rem;
-  }
-
   @include desktop {
-    justify-content: space-between;
-    padding: 2rem;
+    padding: 2rem 4rem;
 
     &__desktop-navbar {
       display: flex;
@@ -53,15 +28,9 @@
       gap: 1rem;
     }
 
-    &__desktop-logo {
-      width: 100px;
-      height: 100px;
-    }
-
-    &__desktop-recipes,
-    &__desktop-ingredients,
-    &__desktop-countries,
-    &__desktop-random-recipe {
+    &__desktop-about-me,
+    &__desktop-contact,
+    &__desktop-projects {
       text-decoration: none;
       font-size: 24px;
       font-weight: 700;
