@@ -1,0 +1,32 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.hero {
+  &__thumbnail {
+    width: 1500px;
+    aspect-ratio: 16/9;
+  }
+
+  &__title-container {
+    position: absolute;
+    top: 20rem;
+    right: 30rem;
+  }
+
+  &__title {
+    color: white;
+    font-size: $desktop-title;
+  }
+
+  &__links-container {
+    position: absolute;
+    top: 5rem;
+    right: 10rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    font-size: $desktop-subheader;
+  }
+}
