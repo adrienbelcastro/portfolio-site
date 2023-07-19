@@ -2,15 +2,21 @@
 @import "../../styles/partials/variables.scss";
 
 .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("https://media.giphy.com/media/hugQmENCWTyPM3yG5D/giphy-downsized-large.gif");
+  background-size: cover;
+  height: 50rem;
+
   &__thumbnail {
     width: 1500px;
     aspect-ratio: 16/9;
   }
 
-  &__title-container {
-    position: absolute;
-    top: 20rem;
-    right: 30rem;
+  &__align-container {
+    align-self: flex-start;
   }
 
   &__title {
@@ -18,15 +24,16 @@
     font-size: $desktop-title;
   }
 
-  &__links-container {
-    position: absolute;
-    top: 5rem;
-    right: 10rem;
+  &__title-container {
+    padding-left: 12rem;
+  }
 
+  &__links-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding-top: 2rem;
 
-    font-size: $desktop-subheader;
+    font-size: $mobile-page-header;
   }
 }
