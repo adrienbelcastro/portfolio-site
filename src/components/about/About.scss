@@ -1,0 +1,29 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.about {
+  height: 100%;
+  margin: 5rem;
+
+  &__intro {
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    margin: 2rem 5rem;
+  }
+
+  &__photo {
+    width: 25%;
+    border-radius: 50%;
+  }
+
+  &__blurb {
+    text-align: justify;
+  }
+}
