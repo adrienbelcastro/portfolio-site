@@ -1,0 +1,30 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.splash-screen {
+  &__title {
+    position: absolute;
+    right: 2.25rem;
+    top: 8rem;
+
+    color: white;
+
+    @include tablet {
+      right: 8rem;
+      top: 17rem;
+    }
+
+    @include desktop {
+      left: 39.5rem;
+      top: 12rem;
+    }
+  }
+}
+
+circle,
+rect,
+line {
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  fill: transparent;
+}
