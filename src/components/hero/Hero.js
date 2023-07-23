@@ -1,26 +1,40 @@
 import React from "react";
+import { RiArrowDownLine } from "react-icons/ri";
+import { motion } from "framer-motion";
+import TypingAnimation from "../transitions/TypingTransition";
 import "./Hero.scss";
 
 export default function Hero() {
   return (
     <div className="hero">
       <div className="hero__title-container">
-        <h1 className="hero__title">Tech Entrepreneur.</h1>
-        <h1 className="hero__title">Software Developer.</h1>
-        <h1 className="hero__title">From Toronto, Ontario.</h1>
+        <motion.h1 className="hero__title">
+          <TypingAnimation text="Tech Entrepreneur." />
+        </motion.h1>
+        <motion.h1 className="hero__title">
+          <TypingAnimation text="Problem Solver." />
+        </motion.h1>
+        <motion.h1 className="hero__title">
+          <TypingAnimation text="Software Developer." />
+        </motion.h1>
+        <motion.h1 className="hero__title">
+          <TypingAnimation text="Based Out Of Toronto." />
+        </motion.h1>
       </div>
-      <div className="hero__align-container">
-        <ul className="hero__links-container">
-          <a href="/" className="hero__links">
-            About Me
-          </a>
-          <a href="/" className="hero__links">
-            Projects
-          </a>
-          <a href="/" className="hero__links">
-            Contact
-          </a>
-        </ul>
+      <div className="hero__cta-container">
+        <p className="hero__cta">Scroll Down</p>
+        <motion.div
+          initial={{ y: 0 }}
+          animate={{ y: 10 }}
+          transition={{
+            type: "tween",
+            ease: "linear",
+            duration: 0.75,
+            repeat: Infinity,
+          }}
+        >
+          <RiArrowDownLine />
+        </motion.div>
       </div>
     </div>
   );
