@@ -1,0 +1,41 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.projects {
+  &__video-container {
+    position: relative;
+  }
+  &__video {
+    width: 100%;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  &__video-container:hover &__overlay {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 7rem;
+  }
+
+  &__description {
+    text-align: justify;
+    margin: 0 9rem;
+    margin-top: 2rem;
+  }
+}
