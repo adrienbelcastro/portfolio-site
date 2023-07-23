@@ -1,0 +1,12 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.contact {
+  &__links-container {
+    display: flex;
+    height: 50rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}
