@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Footer from "../../components/footer/Footer";
 import Hero from "../../components/hero/Hero";
 import Splash from "../../components/splash/SplashScreen";
 import Particles from "../../components/particles/Particles";
 import "../homepage/Homepage.scss";
 import Projects from "../../components/projects/Projects";
 import About from "../../components/about/About";
+import Contact from "../../components/contact/Contact";
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +26,7 @@ function HomePage() {
           <Hero />
           <About />
           <Projects />
-          <Footer />
+          <Contact />
         </div>
       )}
     </>
