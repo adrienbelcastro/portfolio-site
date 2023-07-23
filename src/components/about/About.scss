@@ -2,8 +2,12 @@
 @import "../../styles/partials/variables.scss";
 
 .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 100%;
-  margin: 5rem;
+  margin: 15rem 5rem;
 
   &__intro {
     text-align: center;
