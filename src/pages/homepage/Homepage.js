@@ -13,13 +13,13 @@ function HomePage() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 5000);
+    }, 4000);
   }, []);
 
   return (
     <>
       {isLoading ? (
-        <Splash />
+        <Splash isLoading={isLoading} />
       ) : (
         <div>
           <Particles id="tsparticles" />
