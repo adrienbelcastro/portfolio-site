@@ -22,10 +22,18 @@ export default function Hero() {
         </motion.h1>
       </div>
       <div className="hero__cta-container">
-        <p className="hero__cta">Scroll Down</p>
         <motion.div
           initial={{ y: 0 }}
-          animate={{ y: 10 }}
+          animate={{ y: 0 }}
+          transition={{
+            delay: 5,
+          }}
+        >
+          <p className="hero__cta">Scroll Down</p>
+        </motion.div>
+        <motion.div
+          initial={{ y: 0 }}
+          animate={{ y: 15 }}
           transition={{
             type: "tween",
             ease: "linear",
