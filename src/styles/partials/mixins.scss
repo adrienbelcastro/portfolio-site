@@ -27,3 +27,9 @@
 @mixin hover {
   transform: translateY(0) scale(1.1);
 }
+
+//Transition
+
+@mixin transition($properties) {
+  transition: $properties;
+}
