@@ -9,18 +9,15 @@
   height: 100%;
   margin: 15rem 5rem;
 
-  &__intro {
-    padding-left: 1.75rem;
-    text-align: center;
-  }
-
   &__content {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+  }
 
-    margin: 2rem 5rem;
+  &__title {
+    padding: 0.5rem 0;
   }
 
   &__photo {
@@ -30,5 +27,6 @@
 
   &__blurb {
     text-align: justify;
+    padding-bottom: 2rem;
   }
 }
