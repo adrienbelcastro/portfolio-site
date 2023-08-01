@@ -2,14 +2,22 @@
 @import "../../styles/partials/variables.scss";
 
 .hero {
+  background-image: url("https://media.giphy.com/media/hugQmENCWTyPM3yG5D/giphy-downsized-large.gif");
+  background-size: cover;
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 
-  background-image: url("https://media.giphy.com/media/hugQmENCWTyPM3yG5D/giphy-downsized-large.gif");
-  background-size: cover;
-  height: 50rem;
+  height: 100vh;
+
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
   &__thumbnail {
     width: 1500px;
@@ -17,8 +25,11 @@
   }
 
   &__title {
-    color: white;
-    font-size: $desktop-title;
+    font-size: $mobile-subheader;
+    @include desktop {
+      color: white;
+      font-size: $desktop-title;
+    }
   }
 
   &__links-container {
