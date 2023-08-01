@@ -23,7 +23,7 @@ export default function About() {
               space to build and scale another startup👨🏻‍💻.
             </p>
             <div className="about__stack">
-              <h2 className="about__title"> Tech Stack</h2>
+              <h2 className="about__title"> My Current Tech Stack</h2>
               <img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
               <img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3" />
               <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=flat-square&logo=SASS&logoColor=white" />
