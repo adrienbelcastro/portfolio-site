@@ -7,8 +7,8 @@ export default function Contact() {
     <ScrollAnimation>
       <div className="contact">
         <ul className="contact__links-container">
-          <h4 className="contact__name">Adrien Belcastro</h4>
-          <p className="contact__break"> | </p>
+          <h2 className="contact__name">Adrien Belcastro</h2>
+          <p className="contact__links">|</p>
           <a
             href="https://www.linkedin.com/in/adrienbelcastro/"
             className="contact__links"

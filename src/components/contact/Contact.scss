@@ -4,9 +4,25 @@
 .contact {
   &__links-container {
     display: flex;
-    height: 50rem;
+    height: 100vh;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    margin: 0 2rem;
+  }
+
+  &__name {
+    font-size: $mobile-subheader;
+
+    @include desktop {
+      font-size: $desktop-title;
+    }
+  }
+
+  &__links {
+    font-size: $mobile-links;
+    @include desktop {
+      font-size: $desktop-subheader;
+    }
   }
 }
