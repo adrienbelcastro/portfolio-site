@@ -18,6 +18,9 @@
     background: #fff;
   }
   &__title {
-    font-size: $splashscreen-title;
+    font-size: $mobile-subheader;
+    @include desktop {
+      font-size: $splashscreen-title;
+    }
   }
 }
