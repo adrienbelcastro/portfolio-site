@@ -26,6 +26,9 @@
 
   &__title {
     font-size: $mobile-subheader;
+    @include tablet {
+      font-size: $mobile-page-header;
+    }
     @include desktop {
       color: white;
       font-size: $desktop-title;
