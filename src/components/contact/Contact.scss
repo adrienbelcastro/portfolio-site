@@ -4,11 +4,15 @@
 .contact {
   &__links-container {
     display: flex;
-    height: 100vh;
+
     justify-content: center;
     align-items: center;
     gap: 1rem;
     margin: 0 2rem;
+
+    @include desktop {
+      height: 100vh;
+    }
   }
 
   &__name {
