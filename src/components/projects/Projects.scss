@@ -2,7 +2,9 @@
 @import "../../styles/partials/variables.scss";
 
 .projects {
-  height: 100vh;
+  @include desktop {
+    height: 100vh;
+  }
 
   &__video-container {
     position: relative;
@@ -23,7 +25,7 @@
       display: none;
       justify-content: center;
       align-items: center;
-      pointer-events: none;
+      pointer-events: auto;
     }
 
     &.active {
@@ -74,5 +76,19 @@
 
   &__stack-title {
     padding-bottom: 0.5rem;
+  }
+
+  &__button-link {
+    width: 200px;
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: pink;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+
+    @include desktop {
+      margin: 2rem 9rem;
+    }
   }
 }
