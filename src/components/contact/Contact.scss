@@ -1,0 +1,33 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.contact {
+  margin: 2rem 0;
+  &__links-container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 2rem;
+
+    @include desktop {
+      height: 100vh;
+    }
+  }
+
+  &__name {
+    font-size: $mobile-subheader;
+
+    @include desktop {
+      font-size: $desktop-title;
+    }
+  }
+
+  &__links {
+    font-size: $mobile-links;
+    @include desktop {
+      font-size: $desktop-subheader;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.splash-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  h1 {
+    @include transition(all 1.5s ease);
+    display: inline-block;
+  }
+
+  &__loaded {
+    opacity: 0;
+    background: #fff;
+  }
+  &__title {
+    font-size: $mobile-subheader;
+    @include desktop {
+      font-size: $splashscreen-title;
+    }
+  }
+}

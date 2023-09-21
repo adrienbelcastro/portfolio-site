@@ -1,0 +1,52 @@
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 2rem;
+  @include desktop {
+    margin: 15rem 5rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    padding: 0.75rem 0;
+  }
+
+  &__photo {
+    width: 100%;
+    border-radius: 50%;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include desktop {
+      width: 25%;
+    }
+  }
+
+  &__blurb {
+    text-align: justify;
+    padding-bottom: 1rem;
+  }
+
+  &__stack {
+    padding-bottom: 1.75rem;
+  }
+}
