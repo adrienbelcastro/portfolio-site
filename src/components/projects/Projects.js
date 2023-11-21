@@ -47,7 +47,7 @@ export default function Projects() {
             <img src="https://img.shields.io/badge/-React-black?style=flat-square&logo=react" />
             <img src="https://img.shields.io/badge/-MySQL-black?style=flat-square&logo=mysql" />
           </div>
-          <Link to="https://momentum-sigma.vercel.app/">
+          <Link to="https://momentum-iota.vercel.app/">
             <button className="projects__button-link">Go To Momentum</button>
           </Link>
         </div>
