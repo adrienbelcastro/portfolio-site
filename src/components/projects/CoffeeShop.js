@@ -28,7 +28,7 @@ export default function CoffeeShop() {
         <div className={`projects__overlay ${isDesktop ? "" : "active"}`}>
           <h2 className="projects__title">Coffee Shop</h2>
           <p className="projects__description">
-            "Coffee Shop is designed and developed a dynamic and modern coffee
+            Coffee Shop is designed and developed a dynamic and modern coffee
             shop website using cutting-edge technologies to showcase my
             versatility and commitment to continuous learning. Leveraging
             Next.js for its robust React framework and server-side rendering
@@ -40,7 +40,7 @@ export default function CoffeeShop() {
             database capabilities for efficient data management. This project
             not only demonstrates my proficiency in the specified tech stack but
             also showcases my ability to create a fully functional and
-            aesthetically pleasing web application for a real-world scenario."
+            aesthetically pleasing web application for a real-world scenario.
           </p>
           <div className="projects__stack-container">
             <h2 className="projects__stack-title">Tech Stack:</h2>
