@@ -6,6 +6,7 @@ import "../homepage/Homepage.scss";
 import Projects from "../../components/projects/Projects";
 import About from "../../components/about/About";
 import Contact from "../../components/contact/Contact";
+import CoffeeShop from "../../components/projects/CoffeeShop";
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,6 +27,7 @@ function HomePage() {
           <Hero />
           <About />
           <Projects />
+          <CoffeeShop />
           <Contact />
         </div>
       )}
