@@ -41,6 +41,9 @@ export default function CoffeeShop() {
             not only demonstrates my proficiency in the specified tech stack but
             also showcases my ability to create a fully functional and
             aesthetically pleasing web application for a real-world scenario.
+            Currently I am working on Version 2.0 will include features such as
+            a working cart, a robust login and sign-up system along with
+            security features such as encrypting keys using salts.
           </p>
           <div className="projects__stack-container">
             <h2 className="projects__stack-title">Tech Stack:</h2>
