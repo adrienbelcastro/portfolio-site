@@ -21,6 +21,7 @@ export default function Projects() {
 
   return (
     <div className="projects">
+      <h1 className="projects__header">PROJECTS</h1>
       <div className="projects__video-container">
         <video className="projects__video" autoPlay="autoplay" muted loop>
           <source src={video} type="video/mp4" />
