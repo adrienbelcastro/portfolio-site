@@ -41,9 +41,10 @@ export default function CoffeeShop() {
             not only demonstrates my proficiency in the specified tech stack but
             also showcases my ability to create a fully functional and
             aesthetically pleasing web application for a real-world scenario.
-            Currently I am working on Version 2.0 will include features such as
-            a working cart, a robust login and sign-up system along with
-            security features such as encrypting keys using salts.
+            The project is constantly being improved as I build my skills with
+            this tech stack Currently I am working on Version 2.0 will include
+            features such as a working cart, a robust login and sign-up system
+            along with security features such as encrypting keys using salts.
           </p>
           <div className="projects__stack-container">
             <h2 className="projects__stack-title">Tech Stack:</h2>
@@ -53,9 +54,9 @@ export default function CoffeeShop() {
             <img src="https://img.shields.io/badge/-PostgreSQL-black?style=flat-square&logo=postgresql" />
             <img src="https://img.shields.io/badge/-Supabase-black?style=flat-square&logo=supabase" />
           </div>
-          {/* <Link to="https://momentum-iota.vercel.app/">
-            <button className="projects__button-link">Go To Momentum</button>
-          </Link> */}
+          <Link to="https://momentum-iota.vercel.app/">
+            <button className="projects__button-link">Go To Coffee Shop</button>
+          </Link>
         </div>
       </div>
     </div>
