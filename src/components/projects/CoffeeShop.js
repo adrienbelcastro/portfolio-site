@@ -54,7 +54,7 @@ export default function CoffeeShop() {
             <img src="https://img.shields.io/badge/-PostgreSQL-black?style=flat-square&logo=postgresql" />
             <img src="https://img.shields.io/badge/-Supabase-black?style=flat-square&logo=supabase" />
           </div>
-          <Link to="https://momentum-iota.vercel.app/">
+          <Link to="https://coffee-shop-red-five.vercel.app/">
             <button className="projects__button-link">Go To Coffee Shop</button>
           </Link>
         </div>
