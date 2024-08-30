@@ -2,10 +2,6 @@
 @import "../../styles/partials/variables.scss";
 
 .projects {
-  @include desktop {
-    height: 100vh;
-  }
-
   &__header {
     text-align: center;
   }
