@@ -1,4 +1,4 @@
-import video from "../../assets/videos/project-vid.mp4";
+import background from "../../assets/images/coffee-circle.jpg";
 import { useState, useEffect } from "react";
 import "../projects/Projects.scss";
 import { Link } from "react-router-dom";
@@ -22,9 +22,12 @@ export default function CoffeeShop() {
   return (
     <div className="projects">
       <div className="projects__video-container">
-        <video className="projects__video" autoPlay="autoplay" muted loop>
-          <source src={video} type="video/mp4" />
-        </video>
+        <img
+          src={background}
+          className="projects__video"
+          alt="coffee shop background"
+        />
+
         <div className={`projects__overlay ${isDesktop ? "" : "active"}`}>
           <h2 className="projects__title">Coffee Shop</h2>
           <p className="projects__description">
