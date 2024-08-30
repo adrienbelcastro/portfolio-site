@@ -23,7 +23,7 @@ export default function About() {
               space to build and scale another startup👨🏻‍💻.
             </p>
             <div className="about__stack">
-              <h2 className="about__title"> My Current Tech Stack</h2>
+              <h2 className="about__title"> My Current Tech Stacks</h2>
               <img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
               <img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3" />
               <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=flat-square&logo=SASS&logoColor=white" />
@@ -34,6 +34,11 @@ export default function About() {
               <img src="https://img.shields.io/badge/-MySQL-black?style=flat-square&logo=mysql" />
               <img src="https://img.shields.io/badge/-Git-black?style=flat-square&logo=git" />
               <img src="https://img.shields.io/badge/-GitHub-black?style=flat-square&logo=github" />
+              <img src="https://img.shields.io/badge/-Nextjs-black?style=flat-square&logo=Next.js" />
+              <img src="https://img.shields.io/badge/-TypeScript-black?style=flat-square&logo=typescript" />
+              <img src="https://img.shields.io/badge/-tailwindcss-black?style=flat-square&logo=tailwindcss" />
+              <img src="https://img.shields.io/badge/-PostgreSQL-black?style=flat-square&logo=postgresql" />
+              <img src="https://img.shields.io/badge/-Supabase-black?style=flat-square&logo=supabase" />
             </div>
           </div>
         </div>
