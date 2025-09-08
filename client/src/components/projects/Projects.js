@@ -1,6 +1,6 @@
 import video from "../../assets/videos/project-vid.mp4";
 import { useState, useEffect } from "react";
-import "../projects/Projects.scss";
+import "./Projects.scss";
 import { Link } from "react-router-dom";
 
 export default function Projects() {
@@ -42,13 +42,13 @@ export default function Projects() {
           </p>
           <div className="projects__stack-container">
             <h2 className="projects__stack-title">Tech Stack:</h2>
-            <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=flat-square&logo=SASS&logoColor=white" />
+            <img src="https://img.shields.io/badge/SASS-black?style=flat-square&logo=SASS&logoColor=white" />
             <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=flat-square&logo=vercel&logoColor=white" />
             <img src="https://img.shields.io/badge/-Nodejs-black?style=flat-square&logo=Node.js" />
             <img src="https://img.shields.io/badge/-React-black?style=flat-square&logo=react" />
             <img src="https://img.shields.io/badge/-MySQL-black?style=flat-square&logo=mysql" />
           </div>
-          <Link to="https://momentum-iota.vercel.app/">
+          <Link to="https://momentum-iota.vercel.app/" target="_blank">
             <button className="projects__button-link">Go To Momentum</button>
           </Link>
         </div>
