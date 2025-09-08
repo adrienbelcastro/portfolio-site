@@ -12,6 +12,7 @@ const TypingAnimation = ({ text }) => {
           key={index}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
           transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
           className="typing-animation__letter"
         >

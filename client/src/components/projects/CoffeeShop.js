@@ -1,6 +1,6 @@
 import background from "../../assets/images/coffee-circle.jpg";
 import { useState, useEffect } from "react";
-import "../projects/Projects.scss";
+import "./Projects.scss";
 import { Link } from "react-router-dom";
 
 export default function CoffeeShop() {
@@ -57,7 +57,7 @@ export default function CoffeeShop() {
             <img src="https://img.shields.io/badge/-PostgreSQL-black?style=flat-square&logo=postgresql" />
             <img src="https://img.shields.io/badge/-Supabase-black?style=flat-square&logo=supabase" />
           </div>
-          <Link to="https://coffee-shop-red-five.vercel.app/">
+          <Link to="https://coffee-shop-red-five.vercel.app/" target="_blank">
             <button className="projects__button-link">Go To Coffee Shop</button>
           </Link>
         </div>

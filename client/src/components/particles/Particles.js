@@ -1,13 +1,13 @@
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-//import { loadFull } from "tsparticles";
 import { useCallback, useMemo } from "react";
 
 const ParticlesComponent = (props) => {
   const options = useMemo(() => {
     return {
+      autoPlay: true,
       background: {
-        color: "#000",
+        color: "#00051f",
       },
       fullScreen: {
         enable: true,
@@ -34,9 +34,17 @@ const ParticlesComponent = (props) => {
         },
       },
       particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            area: 800,
+          },
+        },
         links: {
           enable: true,
           distance: 200,
+          color: "#24017d",
         },
         move: {
           enable: true,

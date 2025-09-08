@@ -1,10 +1,10 @@
 import React from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function ScrollAnimation({ children }) {
   const [ref, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
     threshold: 0.5,
   });
 
