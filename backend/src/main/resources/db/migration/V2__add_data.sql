@@ -25,7 +25,7 @@ ARRAY [
     'Developed backend services with Spring Boot and PostgreSQL to handle customer data, scheduling, and order history securely',
     'Collaborating directly with the business owner to gather requirements, iterate on features, and deliver a production-ready MVP']);
 
-INSERT INTO experience (ID, TITLE, COMPANY, LOCATION, DATE, DESCRIPTION) VALUES (2, 'Research Assistant', 'Brock University', 'St. Catharines, Ontario', 'May 2025 - August 2025', 
+INSERT INTO experience (ID, TITLE, COMPANY, LOCATION, DATE, DESCRIPTION) VALUES (2, 'Research Assistant', 'Brock University', 'St.Catharines, Ontario', 'May 2025 - Aug 2025', 
 ARRAY[
     'Preprocessed data, evaluated model performance, contributed to model tuning', 
     'Applied deep learning techniques (CNNs, RNNs) for data modeling and evaluation',
