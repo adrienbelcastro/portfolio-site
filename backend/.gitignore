@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# --- Spring Boot Configuration & Secrets ---
+.env
+*.properties
+*.yml
