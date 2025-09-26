@@ -18,12 +18,11 @@ import lombok.NoArgsConstructor;
 @Table(name = "experience")
 public class ExperienceEntity {
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Long id;
     private String title;
     private String company;
     private String location;
     private String date;
     private String[] description;
-
+    private String color;
 }
