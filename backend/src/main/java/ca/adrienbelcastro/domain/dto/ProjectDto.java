@@ -13,6 +13,10 @@ public class ProjectDto {
     private Long id;
     private String name;
     private String description;
+    private String progress;
     private String[] techstack;
+    private String[] todo;
+    private String color;
     private String url;
+    private String preview;
 }
