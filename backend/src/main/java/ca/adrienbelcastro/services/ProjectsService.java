@@ -13,7 +13,6 @@ public class ProjectsService {
     private final ProjectsRepository projectsRepository;
 
     public ProjectsService(ProjectsRepository projectsRepository) {
-
         this.projectsRepository = projectsRepository;
     }
 
