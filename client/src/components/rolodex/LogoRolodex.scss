@@ -1,0 +1,110 @@
+@use "../../styles/partials/mixins" as *;
+
+.rolodex {
+  position: relative;
+
+  width: 15rem;
+  height: 11rem;
+
+  border-radius: 1rem;
+
+  overflow: visible;
+
+  perspective: 1200px;
+
+  transform: rotateY(-20deg);
+  transform-style: preserve-3d;
+
+  background: rgba(28, 28, 30, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  &__top,
+  &__bottom {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform-style: preserve-3d;
+  }
+
+  &__glow {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    background: radial-gradient(
+      circle at top left,
+      rgba(167, 139, 250, 0.22),
+      transparent 55%
+    );
+
+    pointer-events: none;
+  }
+
+  &__halo {
+    position: absolute;
+
+    inset: 0.85rem;
+
+    border-radius: 1rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    pointer-events: none;
+
+    z-index: 3;
+  }
+
+  &__divider {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 50%;
+
+    transform: translateY(-50%) translateZ(1px);
+
+    border-top: 2px solid #202020;
+
+    z-index: 999;
+  }
+
+  &__badge {
+    position: absolute;
+    right: 0.85rem;
+    bottom: 0.85rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+
+    padding: 0.35rem 0.65rem;
+
+    border-radius: 999px;
+
+    background: rgba(10, 12, 20, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(8px);
+  }
+
+  &__status {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+
+    background: #22c55e;
+    box-shadow: 0 0 12px #22c55e;
+  }
+
+  &__badge-text {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.88);
+  }
+}
