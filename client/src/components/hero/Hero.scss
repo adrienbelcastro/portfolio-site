@@ -1,60 +1,144 @@
-@import "../../styles/partials/mixins.scss";
-@import "../../styles/partials/variables.scss";
+@use "../../styles/partials/mixins" as *;
 
 .hero {
-  background-image: url("https://media.giphy.com/media/hugQmENCWTyPM3yG5D/giphy-downsized-large.gif");
-  background-size: cover;
-
+  position: relative;
+  min-height: 100svh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: center;
 
-  height: 100vh;
+  padding: 5rem 1.25rem 3rem;
 
-  @include desktop {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+  text-align: center;
+
+  @include tablet {
+    padding: 6rem 2rem 4rem;
   }
 
-  &__thumbnail {
-    width: 1500px;
-    aspect-ratio: 16/9;
+  @include desktop {
+    padding: 7rem 2rem 5rem;
+  }
+  &__content {
+    width: 100%;
+    max-width: 72rem;
   }
 
   &__title {
-    font-size: $mobile-subheader;
-    @include tablet {
-      font-size: $mobile-page-header;
-    }
-    @include desktop {
-      color: white;
-      font-size: $desktop-title;
-    }
+  margin-bottom: 1.5rem;
+
+  font-size: clamp(2.75rem, 10vw, 7rem);
+
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+
+  @include tablet {
+    font-size: clamp(3.5rem, 8vw, 6rem);
   }
 
-  &__links-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding-top: 2rem;
-
-    font-size: $mobile-page-header;
+  @include desktop {
+    font-size: clamp(4rem, 7vw, 7rem);
+  }
   }
 
-  &__links {
-    :active {
-      border-bottom: solid white;
-    }
+  &__word-wrapper {
+  display: inline-block;
+  position: relative;
+
+  height: 1.15em;
+
+  overflow: hidden;
+
+  vertical-align: bottom;
   }
 
-  &__cta-container {
-    display: flex;
-    flex-direction: column;
+  &__word {
+  display: inline-block;
+  font-style: normal;
+  font-size: 2rem;
+
+  @include tablet {
+    font-size: 5rem;
+  }
+  @include desktop {
+    font-size: 7rem;
+  }
+  }
+
+  &__description {
+  width: min(100%, 42rem);
+
+  margin: 0 auto 2rem;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+
+  @include tablet {
+    font-size: 1.125rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @include desktop {
+    font-size: 1.25rem;
+  }
+  }
+
+  &__actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+
+  width: 100%;
+  max-width: 22rem;
+
+  margin: 0 auto;
+
+  @include tablet {
+    flex-direction: row;
+
     justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
+
+    max-width: none;
+  }
+
+  @include desktop {
+    gap: 1.25rem;
+  }
+  }
+
+  &__button {
+  display: inline-flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.85rem 1.5rem;
+
+  border-radius: 0.75rem;
+
+  font-size: 0.9rem;
+
+  @include tablet {
+    padding: 0.9rem 1.75rem;
+  }
+  }
+
+  &__scroll {
+  position: absolute;
+
+  bottom: 1.5rem;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  @include mobile {
+    display: none;
+  }
   }
 }
