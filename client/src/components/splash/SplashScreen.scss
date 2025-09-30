@@ -1,26 +1,18 @@
-@import "../../styles/partials/mixins.scss";
-@import "../../styles/partials/variables.scss";
+@use "../../styles/partials/mixins" as *;
 
 .splash-screen {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  gap: 0.5rem;
+  padding: 2rem 6rem;
   height: 100vh;
 
-  h1 {
-    @include transition(all 1.5s ease);
-    display: inline-block;
-  }
-
-  &__loaded {
-    opacity: 0;
-    background: #fff;
-  }
-  &__title {
-    font-size: $mobile-subheader;
-    @include desktop {
-      font-size: $splashscreen-title;
-    }
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.5rem;
   }
 }
