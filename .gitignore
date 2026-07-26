@@ -1,0 +1,13 @@
+# Root files
+.DS_Store
+
+# Client dependencies and builds
+client/node_modules/
+client/dist/
+client/build/
+client/.env
+
+# Backend dependencies and environment keys
+backend/node_modules/
+backend/venv/
+backend/.env
