@@ -4,7 +4,7 @@ CREATE TABLE projects (
     description TEXT NOT NULL,
     progress TEXT NOT NULL,
     techstack TEXT[] NOT NULL,
-    todo TEXT[],
+    todo JSONB,
     color TEXT NOT NULL,
     url VARCHAR(500),
     preview VARCHAR(500),
