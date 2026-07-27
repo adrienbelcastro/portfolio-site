@@ -18,6 +18,7 @@ export default function Experience() {
           throw new Error(`Server error! status: ${response.status}`);
         }
         const result = await response.json();
+        console.log(result);
 
         setExperience(result);
       } catch (err) {
@@ -28,7 +29,11 @@ export default function Experience() {
   }, []);
 
   if (error) {
-    return <p className="experience__message">Unable to load experience: {error.message}</p>;
+    return (
+      <p className="experience__message">
+        Unable to load experience: {error.message}
+      </p>
+    );
   }
 
   if (!experience) {
@@ -59,7 +64,11 @@ export default function Experience() {
           />
           <div className="experience__list">
             {experience.map((exp) => (
-              <motion.div key={exp.id ?? `${exp.company}-${exp.title}`} variants={fadeUp} className="experience__item">
+              <motion.div
+                key={exp.id ?? `${exp.company}-${exp.title}`}
+                variants={fadeUp}
+                className="experience__item"
+              >
                 <div
                   className="experience__marker"
                   style={{
@@ -96,7 +105,10 @@ export default function Experience() {
                   </div>
                   <ul className="experience__description-list">
                     {exp.description.map((description) => (
-                      <li key={description} className="experience__description-item font-body">
+                      <li
+                        key={description}
+                        className="experience__description-item font-body"
+                      >
                         <span
                           className="experience__bullet"
                           style={{ background: exp.color }}

@@ -20,6 +20,7 @@ export default function Projects() {
           throw new Error(`Server error! status: ${response.status}`);
         }
         const result = await response.json();
+        console.log(result);
 
         const completed = result.filter(
           (project) => project.progress === "Completed",
@@ -41,50 +42,48 @@ export default function Projects() {
 
   return (
     <section id="projects" className="projects">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            variants={stagger}
-          >
-            <motion.div variants={fadeUp}>
-              <SectionLabel num="03" label="Projects" color="#f472b6" />
-            </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={stagger}
+      >
+        <motion.div variants={fadeUp}>
+          <SectionLabel num="03" label="Projects" color="#f472b6" />
+        </motion.div>
 
-            <motion.div variants={fadeUp} className="projects__status-row">
-              <div className="projects__status-dot" />
-              <span className="projects__status-label font-display">
-                Currently Building
-              </span>
-              <span className="projects__status-count font-mono">
-                — {currentProjects.length} active
-              </span>
+        <motion.div variants={fadeUp} className="projects__status-row">
+          <div className="projects__status-dot" />
+          <span className="projects__status-label font-display">
+            Currently Building
+          </span>
+          <span className="projects__status-count font-mono">
+            — {currentProjects.length} active
+          </span>
+        </motion.div>
+        <div className="projects__grid projects__grid--current">
+          {currentProjects.map((proj) => (
+            <motion.div key={proj.id ?? proj.name} variants={fadeUp}>
+              <CurrentCard proj={proj} />
             </motion.div>
-            <div className="projects__grid projects__grid--current">
-              {currentProjects.map((proj) => (
-                <motion.div key={proj.id ?? proj.name} variants={fadeUp}>
-                  <CurrentCard proj={proj} />
-                </motion.div>
-              ))}
-            </div>
+          ))}
+        </div>
 
-            <motion.div variants={fadeUp} className="projects__status-row">
-              <div className="projects__status-dot projects__status-dot--muted" />
-              <span className="projects__status-label font-display">
-                Completed
-              </span>
-              <span className="projects__status-count font-mono">
-                — {completedProjects.length} shipped
-              </span>
+        <motion.div variants={fadeUp} className="projects__status-row">
+          <div className="projects__status-dot projects__status-dot--muted" />
+          <span className="projects__status-label font-display">Completed</span>
+          <span className="projects__status-count font-mono">
+            — {completedProjects.length} shipped
+          </span>
+        </motion.div>
+        <div className="projects__grid projects__grid--completed">
+          {completedProjects.map((proj) => (
+            <motion.div key={proj.id ?? proj.name} variants={fadeUp}>
+              <CompletedCard proj={proj} />
             </motion.div>
-            <div className="projects__grid projects__grid--completed">
-              {completedProjects.map((proj) => (
-                <motion.div key={proj.id ?? proj.name} variants={fadeUp}>
-                  <CompletedCard proj={proj} />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }
