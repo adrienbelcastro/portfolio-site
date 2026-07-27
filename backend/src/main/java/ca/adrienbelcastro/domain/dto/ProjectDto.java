@@ -1,5 +1,8 @@
 package ca.adrienbelcastro.domain.dto;
 
+import java.util.List;
+
+import ca.adrienbelcastro.domain.entities.TodoItem;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +18,7 @@ public class ProjectDto {
     private String description;
     private String progress;
     private String[] techstack;
-    private String[] todo;
+    private List<TodoItem> todo;
     private String color;
     private String url;
     private String preview;
