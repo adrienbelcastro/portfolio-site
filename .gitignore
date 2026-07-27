@@ -17,6 +17,7 @@ backend/*.iml
 backend/.settings/
 backend/.project/
 backend/.classpath/
+backend/.env.local
 
 # --- FRONTEND (Create React App) ---
 # Dependencies and builds
