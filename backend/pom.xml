@@ -71,6 +71,11 @@
 			<artifactId>h2</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.hypersistence</groupId>
+			<artifactId>hypersistence-utils-hibernate-63</artifactId>
+			<version>3.9.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -78,7 +83,7 @@
 				<groupId>org.flywaydb</groupId>
 				<artifactId>flyway-maven-plugin</artifactId>
 				<configuration>
-					<url>jdbc:postgresql://localhost:5332/portfolio</url>
+					<url>jdbc:postgresql://localhost:5432/portfolio</url>
 					<user>adrienbelcastro</user>
 					<password>password</password>
 					<baselineOnMigrate>true</baselineOnMigrate>
