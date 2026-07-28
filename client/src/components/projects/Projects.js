@@ -46,7 +46,7 @@ export default function Projects() {
 
   if (error) {
     return (
-      <motion.div variants={fadeUp}>
+      <motion.div variants={fadeUp} id="projects">
         <section className="projects projects--loading" aria-live="polite">
           <SectionLabel num="03" label="Projects" color="#f472b6" />
           <div className="projects__error glass gradient-border">
@@ -66,7 +66,7 @@ export default function Projects() {
     completedProjects.length === 0
   ) {
     return (
-      <motion.div variants={fadeUp}>
+      <motion.div variants={fadeUp} id="projects">
         <section className="projects projects--loading" aria-live="polite">
           <SectionLabel num="03" label="Projects" color="#f472b6" />
           <div className="projects__error glass gradient-border">

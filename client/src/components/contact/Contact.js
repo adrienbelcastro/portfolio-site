@@ -10,7 +10,7 @@ export default function Contact() {
   const isMobile = window.matchMedia("(max-width: 767px)").matches;
   return (
     <ScrollAnimation>
-      <div className="contact">
+      <div className="contact" id="contact">
         <SectionLabel num="04" label="Contact" color="#fb923c" />
         <div className="contact__racing">
           <FlipLink
