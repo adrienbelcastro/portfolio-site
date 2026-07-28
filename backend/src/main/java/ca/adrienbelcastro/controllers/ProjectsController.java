@@ -21,7 +21,7 @@ public class ProjectsController {
         this.projectsService = projectsService;
     }
 
-    @GetMapping(path = "/projects")
+   @GetMapping(path = "/projects")
     public List<ProjectEntity> getAllProjects() {
         return projectsService.getAllProjects();
     }
