@@ -1,0 +1,50 @@
+@use "../../styles/partials/mixins" as *;
+
+.logo-item {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-content: center;
+  border-radius: 1rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 18px 35px rgba(0, 0, 0, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.35),
+      0 24px 42px rgba(0, 0, 0, 0.2);
+  }
+
+  &__logo {
+    height: 8.75rem;
+    width: 12.75rem;
+    fill: rgba(10, 12, 20, 0.9);
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.14));
+  }
+
+  /* Background colors */
+  &--orange {
+    background: linear-gradient(135deg, #fdba74 0%, #fb923c 100%);
+  }
+
+  &--green {
+    background: linear-gradient(135deg, #86efac 0%, #4ade80 100%);
+  }
+
+  &--blue {
+    background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+  }
+
+  &--pink {
+    background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+  }
+
+  &--docker {
+    background: linear-gradient(135deg, #1d63ed 0%, #2563eb 100%);
+  }
+}

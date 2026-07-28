@@ -1,58 +1,89 @@
-import video from "../../assets/videos/project-vid.mp4";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { apiUrl } from "../../utils";
+import { motion } from "motion/react";
+import { fadeUp } from "../transitions/GlobalVariants";
+import { stagger } from "../transitions/GlobalVariants";
+import CurrentCard from "./CurrentCard";
+import CompletedCard from "./CompletedCard";
+import SectionLabel from "../section/SectionLabel";
 import "./Projects.scss";
-import { Link } from "react-router-dom";
 
 export default function Projects() {
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [currentProjects, setCurrentProjects] = useState([]);
+  const [completedProjects, setCompletedProjects] = useState([]);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1279);
-    };
-    handleResize();
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/projects`);
+        if (!response.ok) {
+          throw new Error(`Server error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        console.log(result);
 
-    window.addEventListener("resize", handleResize);
+        const completed = result.filter(
+          (project) => project.progress === "Completed",
+        );
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
+        const current = result.filter(
+          (project) =>
+            project.progress === "In Progress" || project.progress === "To-Do",
+        );
+
+        setCompletedProjects(completed);
+        setCurrentProjects(current);
+      } catch (requestError) {
+        console.error("Unable to load projects:", requestError);
+      }
     };
+    fetchProjects();
   }, []);
 
   return (
-    <div className="projects">
-      <h1 className="projects__header">PROJECTS</h1>
-      <div className="projects__video-container">
-        <video className="projects__video" autoPlay="autoplay" muted loop>
-          <source src={video} type="video/mp4" />
-        </video>
-        <div className={`projects__overlay ${isDesktop ? "" : "active"}`}>
-          <h2 className="projects__title">Momentum</h2>
-          <p className="projects__description">
-            Momentum is a recipe app designed to empower users to track their
-            macro-nutrients while enjoying a diverse range of delicious meals.
-            Whether you're striving for a healthier lifestyle or have specific
-            dietary goals, this app provides a comprehensive platform to manage
-            your nutritional intake. The site also features a unique article
-            section into the app. Here, users can contribute their own recipes,
-            share their culinary experiences, and engage in meaningful
-            discussions with like-minded individuals. The tech stack I used to
-            create this application was react for the front-end, node.js and
-            express.js for the backend and mySql for the database.
-          </p>
-          <div className="projects__stack-container">
-            <h2 className="projects__stack-title">Tech Stack:</h2>
-            <img src="https://img.shields.io/badge/SASS-black?style=flat-square&logo=SASS&logoColor=white" />
-            <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=flat-square&logo=vercel&logoColor=white" />
-            <img src="https://img.shields.io/badge/-Nodejs-black?style=flat-square&logo=Node.js" />
-            <img src="https://img.shields.io/badge/-React-black?style=flat-square&logo=react" />
-            <img src="https://img.shields.io/badge/-MySQL-black?style=flat-square&logo=mysql" />
-          </div>
-          <Link to="https://momentum-iota.vercel.app/" target="_blank">
-            <button className="projects__button-link">Go To Momentum</button>
-          </Link>
+    <section id="projects" className="projects">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={stagger}
+      >
+        <motion.div variants={fadeUp}>
+          <SectionLabel num="03" label="Projects" color="#f472b6" />
+        </motion.div>
+
+        <motion.div variants={fadeUp} className="projects__status-row">
+          <div className="projects__status-dot" />
+          <span className="projects__status-label font-display">
+            Currently Building
+          </span>
+          <span className="projects__status-count font-mono">
+            — {currentProjects.length} active
+          </span>
+        </motion.div>
+        <div className="projects__grid projects__grid--current">
+          {currentProjects.map((proj) => (
+            <motion.div key={proj.id ?? proj.name} variants={fadeUp}>
+              <CurrentCard proj={proj} />
+            </motion.div>
+          ))}
         </div>
-      </div>
-    </div>
+
+        <motion.div variants={fadeUp} className="projects__status-row">
+          <div className="projects__status-dot projects__status-dot--muted" />
+          <span className="projects__status-label font-display">Completed</span>
+          <span className="projects__status-count font-mono">
+            — {completedProjects.length} shipped
+          </span>
+        </motion.div>
+        <div className="projects__grid projects__grid--completed">
+          {completedProjects.map((proj) => (
+            <motion.div key={proj.id ?? proj.name} variants={fadeUp}>
+              <CompletedCard proj={proj} />
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
   );
 }

@@ -1,8 +1,14 @@
-@import "./variables.scss";
+@use "./variables" as *;
 
 //mixins
+@mixin mobile {
+  @media (max-width: #{$mobile-breakpoint - 1px}) {
+    @content;
+  }
+}
+
 @mixin tablet {
-  @media (min-width: 768px) and (max-width: $tablet-breakpoint) {
+  @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
     @content;
   }
 }

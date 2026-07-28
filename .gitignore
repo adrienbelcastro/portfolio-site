@@ -1,0 +1,37 @@
+# Global / OS files
+.DS_Store
+
+# --- BACKEND (Spring Boot) ---
+# Dependencies and builds
+backend/target/
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+
+# Configuration & Secrets (Never commit actual database passwords!)
+backend/src/main/resources/application.properties
+
+# IDE specific files
+backend/.idea/
+backend/*.iml
+backend/.settings/
+backend/.project/
+backend/.classpath/
+backend/.env.local
+
+# --- FRONTEND (Create React App) ---
+# Dependencies and builds
+client/node_modules/
+client/build/
+client/dist/
+
+# Local env secrets
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+
+# Debug logs
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*

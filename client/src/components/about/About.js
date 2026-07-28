@@ -1,131 +1,162 @@
-import React from "react";
-import photo from "../../assets/images/profile.jpg";
-import ScrollAnimation from "../transitions/ScrollAnimation";
+import { FaBook, FaCode, FaDatabase, FaWrench } from "react-icons/fa6";
+import { FiMapPin } from "react-icons/fi";
+import { IoLayers } from "react-icons/io5";
+import { motion } from "motion/react";
+import SectionLabel from "../section/SectionLabel";
+import { stagger, fadeUp } from "../transitions/GlobalVariants";
 import "./About.scss";
 
 export default function About() {
+  const skillGroups = [
+    {
+      icon: FaCode,
+      label: "Languages",
+      color: "#a78bfa",
+      items: [
+        "Java",
+        "C++",
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "SQL",
+        "Golang/Go",
+        "HTML5",
+        "CSS",
+      ],
+    },
+    {
+      icon: IoLayers,
+      label: "Frameworks",
+      color: "#22d3ee",
+      items: [
+        "React",
+        "Next.js",
+        "Node.js",
+        "Express",
+        "Tailwind CSS",
+        "Flask",
+        "Spring Boot",
+        "Redis",
+        "Bootstrap",
+      ],
+    },
+    {
+      icon: FaDatabase,
+      label: "Databases",
+      color: "#f472b6",
+      items: ["PostgreSQL", "Supabase", "Firebase", "MongoDB", "MySQL"],
+    },
+    {
+      icon: FaWrench,
+      label: "Tools",
+      color: "#fb923c",
+      items: [
+        "Git",
+        "Docker",
+        "AWS",
+        "Vercel",
+        "Figma",
+        "Kubernetes",
+        "Google Cloud Platform",
+        "CLoudflare Web Services",
+        "Jira",
+      ],
+    },
+    {
+      icon: FaBook,
+      label: "Libraries",
+      color: "#8b1538",
+      items: ["Pandas", "NumPy", "Matplotlib", "JUnit", "Jest", "Supertest"],
+    },
+  ];
+
   return (
-    <ScrollAnimation>
-      <div className="about">
-        <div className="about__content">
-          <img className="about__photo" src={photo} alt="Adrien" />
-          <div>
-            <h1 className="about__title"> My Name Is Adrien...</h1>
-            <p className="about__blurb">
-              💻 I’m currently studying Computer Science & Business at Brock
-              University. My journey into tech began in late 2022 after pursuing
-              a startup idea, which sparked my passion for software engineering.
-              Since then, I’ve completed a Software Engineering Bootcamp and
-              have been building production-ready applications with modern
-              stacks such as React and Next.js.
+    <section id="about" className="about">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={stagger}
+      >
+        <motion.div variants={fadeUp}>
+          <SectionLabel num="01" label="About" color="#a78bfa" />
+        </motion.div>
+
+        <div className="about__grid">
+          <motion.div
+            variants={fadeUp}
+            className="about__card about__card--wide glass gradient-border glass-hover"
+          >
+            <h2 className="about__heading font-display">
+              Hi, I&apos;m <span className="gradient-text">Adrien</span> —<br />
+              software developer and systems engineer.
+            </h2>
+            <p className="about__copy">
+              Currently studying Computer Science &amp; Business at Brock
+              University. My journey into tech began in 2020 after spinning a
+              startup idea that sparked my passion for software engineering.
+              I&apos;ve shipped full production-ready applications and
+              co-authored an academic paper measuring representation bias in
+              embedded AI models under limited human supervision.
             </p>
-            <p className="about__blurb">
-              📖 I also had the opportunity to contribute to academic research,
-              co-authoring a published paper that measured representational bias
-              in embedded AI models under limited human supervision. These
-              experiences have strengthened both my technical expertise and my
-              curiosity for how emerging technologies can be applied to
-              real-world problems.
-            </p>
-            <p className="about__blurb">
-              🚀 With a foundation in business strategy and software
-              engineering, I bring a unique perspective to problem-solving. I’m
-              passionate about continuous learning, developing scalable
-              applications, and ultimately leveraging my skills to launch and
-              grow technology ventures that drive meaningful impact.
-            </p>
-            <h1 className="about__title"> My Technical Skills</h1>
-            <div className="about__stack">
-              <h3 className="about__title">Languages:</h3>
-              <img
-                src="https://img.shields.io/badge/-HTML5-black?style=flat-square&logo=html5&logoColor=white"
-                alt="Html badge"
-              />
-              <img
-                src="https://img.shields.io/badge/-CSS3-black?style=flat-square&logo=css3"
-                alt="CSS badge"
-              />
+          </motion.div>
 
-              <img
-                src="https://img.shields.io/badge/java-black.svg?style=flat-square&logo=openjdk&logoColor=white"
-                alt="Java badge"
-              />
+          <motion.div
+            variants={fadeUp}
+            className="about__card about__card--info glass gradient-border glass-hover"
+          >
+            <div
+              className="about__badge"
+              style={{
+                background: "linear-gradient(135deg,#7c3aed40,#0891b240)",
+              }}
+            >
+              <FiMapPin size={18} className="about__icon" />
+            </div>
+            <div>
+              <p className="about__badge-label font-mono">Based in</p>
+              <p className="about__badge-title font-display">Toronto, ON</p>
+              <p className="about__badge-subtitle font-mono">Brock University</p>
+              <p className="about__badge-meta">CS + Business</p>
+            </div>
+          </motion.div>
 
-              <img
-                src="https://img.shields.io/badge/python-black?style=flat-square&logo=python&logoColor=ffdd54"
-                alt="Python badge"
-              />
-
-              <img
-                src="https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript"
-                alt="JS badge"
-              />
-
-              <img
-                src="https://img.shields.io/badge/-TypeScript-black?style=flat-square&logo=typescript"
-                alt="TS badge"
-              />
-              <img
-                src="https://img.shields.io/badge/go-black?style=flat-square&logo=go&logoColor=white"
-                alt="TS badge"
-              />
-            </div>
-            <div className="about__stack">
-              <h3 className="about__title">Frameworks/Libraries:</h3>
-              <img
-                src="https://img.shields.io/badge/SASS-black.svg?style=flat-square&logo=SASS&logoColor=white"
-                alt="SASS badge"
-              />
-              <img
-                src="https://img.shields.io/badge/-Nodejs-black?style=flat-square&logo=Node.js"
-                alt="Node.js badge"
-              />
-              <img
-                src="https://img.shields.io/badge/-React-black?style=flat-square&logo=react"
-                alt="React badge"
-              />
-              <img
-                src="https://img.shields.io/badge/-Nextjs-black?style=flat-square&logo=Next.js"
-                alt="NextJs badge"
-              />
-              <img
-                src="https://img.shields.io/badge/-tailwindcss-black?style=flat-square&logo=tailwindcss"
-                alt="Tailwind badge"
-              />
-            </div>
-            <div className="about__stack">
-              <h3 className="about__title">Database Services:</h3>
-              <img
-                src="https://img.shields.io/badge/-PostgreSQL-black?style=flat-square&logo=postgresql"
-                alt="PostgreSql badge"
-              />
-              <img
-                src="https://img.shields.io/badge/-Supabase-black?style=flat-square&logo=supabase"
-                alt="Supabase badge"
-              />
-            </div>
-            <div className="about__stack">
-              <h3 className="about__title">Tools/Platforms:</h3>
-              <img
-                src="https://img.shields.io/badge/-Git-black?style=flat-square&logo=git"
-                alt="Git badge"
-              />
-              <img
-                src="https://img.shields.io/badge/-MySQL-black?style=flat-square&logo=mysql"
-                alt="MYSQL badge"
-              />
-              <img
-                src="https://img.shields.io/badge/-GitHub-black?style=flat-square&logo=github"
-                alt="Github badge"
-              />
-              <img
-                src="https://img.shields.io/badge/vercel-%23000000.svg?style=flat-square&logo=vercel&logoColor=white"
-                alt="Vercel badge"
-              />
-            </div>
-          </div>
+          {skillGroups.map((group) => (
+            <motion.div
+              key={group.label}
+              variants={fadeUp}
+              className="about__card about__card--skill glass gradient-border glass-hover"
+            >
+              <div className="about__skill-header">
+                <div
+                  className="about__skill-icon"
+                  style={{ background: `${group.color}20` }}
+                >
+                  <group.icon size={16} style={{ color: group.color }} />
+                </div>
+                <span className="about__skill-label font-display">
+                  {group.label}
+                </span>
+              </div>
+              <div className="about__skill-list">
+                {group.items.map((skill) => (
+                  <span
+                    key={skill}
+                    className="about__skill-tag font-mono"
+                    style={{
+                      background: `${group.color}15`,
+                      color: group.color,
+                      border: `1px solid ${group.color}30`,
+                    }}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </div>
-    </ScrollAnimation>
+      </motion.div>
+    </section>
   );
 }

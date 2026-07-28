@@ -1,33 +1,162 @@
-@import "../../styles/partials/mixins.scss";
-@import "../../styles/partials/variables.scss";
+@use "../../styles/partials/mixins" as *;
 
 .contact {
-  margin: 2rem 0;
-  &__links-container {
+  position: relative;
+  padding: 7rem 1.5rem;
+  max-width: 72rem;
+  margin: 0 auto;
+
+  &__racing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__socials {
     display: flex;
 
+    gap: 1.5rem;
+
+    flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
-    gap: 1rem;
-    margin: 0 2rem;
 
-    @include desktop {
-      height: 100vh;
+    @include tablet {
+      gap: 2.5rem;
+
+      flex-direction: row;
     }
   }
 
-  &__name {
-    font-size: $mobile-subheader;
-
-    @include desktop {
-      font-size: $desktop-title;
-    }
-  }
+  /*
+    Base link container
+  */
 
   &__links {
-    font-size: $mobile-links;
-    @include desktop {
-      font-size: $desktop-subheader;
+    position: relative;
+
+    display: block;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    perspective: 900px;
+
+    transform-style: preserve-3d;
+
+    line-height: 1;
+
+    height: clamp(2rem, 6vw, 5rem);
+
+    &::after {
+      content: "";
+
+      position: absolute;
+
+      bottom: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 3px;
+
+      transform: scaleX(0);
+
+      transform-origin: left;
+
+      transition: transform 0.35s ease;
     }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+
+  /*
+    Default links
+  */
+
+  &__links:not(.contact__links--team) {
+    &::after {
+      background: linear-gradient(90deg, #a78bfa, #22d3ee, transparent);
+    }
+
+    .contact__hovered .contact__letter {
+      background: linear-gradient(90deg, #a78bfa, #22d3ee, #f472b6);
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      background-clip: text;
+    }
+  }
+
+  /*
+    BrockU Formula Racing
+  */
+
+  &__links--team {
+    height: auto;
+
+    &::after {
+      background: linear-gradient(90deg, #8b1538, #b91c45, transparent);
+    }
+
+    .contact__hovered .contact__letter {
+      background: linear-gradient(90deg, #8b1538, #b91c45);
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      background-clip: text;
+    }
+  }
+
+  /*
+    Animation layers
+  */
+
+  &__front,
+  &__hovered {
+    display: block;
+
+    height: 100%;
+
+    transform-style: preserve-3d;
+  }
+
+  &__hovered {
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+  }
+
+  &__letter {
+    display: inline-block;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(2rem, 6vw, 5rem);
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    line-height: 1;
+
+    color: white;
+
+    transform-origin: center;
   }
 }

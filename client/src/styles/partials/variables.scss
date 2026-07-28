@@ -1,27 +1,41 @@
 // Breakpoint Mixins
-$mobile-breakpoint: 320px;
+$mobile-breakpoint: 768px;
 $tablet-breakpoint: 1279px;
 $desktop-breakpoint: 1280px;
 
-//Primary Colours
+// Primary Colours
 $white: #ffffff;
 $off-white: #f5f5f5;
-$black: black;
+$purple: #24017d;
+$background: #00051f;
+$blue: #00051f;
 
-//Secondary Colors
+// Secondary Colors
 $alabaster: #fafafa;
 $mercury: #e1e1e1;
 $shadow: #888888;
+$black: black;
 
-//Box Shadow
+// Box Shadow
 $box-shadow: 1px 1px 10px 2px $shadow;
 
-//Font Sizes
+// Font Sizes
 $mobile-page-header: 32px;
-$mobile-subheader: 18px;
-$mobile-body: 16px;
+$mobile-subheader: 14px;
+$mobile-body: 12px;
+
 $desktop-body: 24px;
 $desktop-title: 48px;
 $desktop-subheader: 36px;
+
 $splashscreen-title: 60px;
 $mobile-links: 12px;
+
+// Font Families
+$font-display: "Plus Jakarta Sans", sans-serif;
+$font-body: "Inter", sans-serif;
+$font-mono: "Geist Mono", monospace;
+
+:export {
+  mobileBreakpoint: $mobile-breakpoint;
+}

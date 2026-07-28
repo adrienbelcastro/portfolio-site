@@ -1,0 +1,27 @@
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+
+  &__num,
+  &__text {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  &__num {
+    font-weight: 600;
+  }
+
+  &__line {
+    width: 100%;
+    max-width: 2.5rem;
+    height: 1px;
+  }
+
+  &__text {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
