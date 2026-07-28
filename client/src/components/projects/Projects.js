@@ -11,6 +11,8 @@ import "./Projects.scss";
 export default function Projects() {
   const [currentProjects, setCurrentProjects] = useState([]);
   const [completedProjects, setCompletedProjects] = useState([]);
+  const [error, setError] = useState(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -34,11 +36,49 @@ export default function Projects() {
         setCompletedProjects(completed);
         setCurrentProjects(current);
       } catch (requestError) {
-        console.error("Unable to load projects:", requestError);
+        setError(requestError);
+      } finally {
+        setLoaded(true);
       }
     };
     fetchProjects();
   }, []);
+
+  if (error) {
+    return (
+      <motion.div variants={fadeUp}>
+        <section className="projects projects--loading" aria-live="polite">
+          <SectionLabel num="03" label="Projects" color="#f472b6" />
+          <div className="projects__error glass gradient-border">
+            <span className="projects__error-icon">!</span>
+            <p className="projects__message font-mono">
+              Unable to load projects: {error.message}
+            </p>
+          </div>
+        </section>
+      </motion.div>
+    );
+  }
+
+  if (
+    loaded &&
+    currentProjects.length === 0 &&
+    completedProjects.length === 0
+  ) {
+    return (
+      <motion.div variants={fadeUp}>
+        <section className="projects projects--loading" aria-live="polite">
+          <SectionLabel num="03" label="Projects" color="#f472b6" />
+          <div className="projects__error glass gradient-border">
+            <span className="projects__error-icon">!</span>
+            <p className="projects__message font-mono">
+              No projects to show right now.
+            </p>
+          </div>
+        </section>
+      </motion.div>
+    );
+  }
 
   return (
     <section id="projects" className="projects">

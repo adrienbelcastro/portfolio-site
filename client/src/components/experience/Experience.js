@@ -30,17 +30,31 @@ export default function Experience() {
 
   if (error) {
     return (
-      <p className="experience__message">
-        Unable to load experience: {error.message}
-      </p>
+      <motion.div variants={fadeUp}>
+        <section className="experience experience--loading" aria-live="polite">
+          <SectionLabel num="02" label="Experience" color="#22d3ee" />
+          <div className="experience__error glass gradient-border">
+            <span className="experience__error-icon">!</span>
+            <p className="experience__message font-mono">
+              Unable to load experience: {error.message}
+            </p>
+          </div>
+        </section>
+      </motion.div>
     );
   }
 
   if (!experience) {
     return (
-      <section className="experience experience--loading" aria-live="polite">
-        <p className="experience__message">Loading experience…</p>
-      </section>
+      <motion.div variants={fadeUp}>
+        <section className="experience experience--loading" aria-live="polite">
+          <SectionLabel num="02" label="Experience" color="#22d3ee" />
+          <div className="experience__loading glass gradient-border">
+            <span className="experience__spinner" />
+            <p className="experience__message font-mono">Loading experience…</p>
+          </div>
+        </section>
+      </motion.div>
     );
   }
   return (
